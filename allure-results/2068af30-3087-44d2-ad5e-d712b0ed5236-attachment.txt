@@ -1,0 +1,7 @@
+The price: 7.99
+The price: 9.99
+The price: 15.99
+The price: 15.99
+The price: 29.99
+The price: 49.99
+The prices are sorted in ascending order.

@@ -1,0 +1,37 @@
+import { test, expect } from '@playwright/test';
+
+test('test', async ({ page }) => {
+  await page.goto('https://www.saucedemo.com/inventory.html');
+  await page.goto('https://www.saucedemo.com/?/inventory.html');
+  await page.goto('https://www.saucedemo.com/inventory.html');
+  await page.goto('https://www.saucedemo.com/');
+  await page.locator('[data-test="username"]').click();
+  await page.locator('[data-test="username"]').fill('standard_user');
+  await page.locator('[data-test="password"]').click();
+  await page.locator('[data-test="password"]').fill('secret_sauce');
+  await page.locator('[data-test="login-button"]').click();
+  await page.locator('[data-test="title"]').click();
+  await expect(page.locator('[data-test="title"]')).toBeVisible();
+  await expect(page.locator('[data-test="title"]')).toBeVisible();
+  await page.locator('[data-test="product-sort-container"]').selectOption('lohi');
+  await page.locator('[data-test="inventory-list"]').click();
+  await page.locator('[data-test="add-to-cart-sauce-labs-onesie"]').click();
+  await page.locator('[data-test="shopping-cart-link"]').click();
+  await expect(page.locator('[data-test="item-2-title-link"]')).toBeVisible();
+  await page.locator('[data-test="checkout"]').click();
+  await page.locator('[data-test="firstName"]').click();
+  await page.locator('[data-test="firstName"]').fill('tr');
+  await page.locator('[data-test="firstName"]').click();
+  await page.locator('[data-test="firstName"]').fill('tram');
+  await page.locator('[data-test="lastName"]').click();
+  await page.locator('[data-test="lastName"]').fill('nguyn');
+  await page.locator('[data-test="postalCode"]').click();
+  await page.locator('[data-test="postalCode"]').fill('84');
+  await page.locator('[data-test="continue"]').click();
+  await page.locator('[data-test="payment-info-label"]').click();
+  await expect(page.locator('[data-test="shipping-info-label"]')).toBeVisible();
+  await expect(page.locator('[data-test="subtotal-label"]')).toBeVisible();
+  await expect(page.locator('[data-test="finish"]')).toBeVisible();
+  await page.locator('[data-test="finish"]').click();
+  await page.locator('[data-test="complete-header"]').click();
+});
