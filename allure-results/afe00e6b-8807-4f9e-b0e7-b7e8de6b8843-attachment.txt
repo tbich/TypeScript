@@ -1,0 +1,3 @@
+getSelectedItemName: Sauce Labs Backpack
+firstItemName: Sauce Labs Bike Light
+selectedItemName: Sauce Labs Backpack

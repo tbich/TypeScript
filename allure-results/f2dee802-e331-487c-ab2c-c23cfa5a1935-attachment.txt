@@ -1,0 +1,2 @@
+firstItemName: Sauce Labs Backpack
+selectedItemName: Sauce Labs Backpack

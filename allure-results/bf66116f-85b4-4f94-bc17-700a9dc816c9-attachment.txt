@@ -1,0 +1,3 @@
+getSelectedItemName: [object Promise]
+firstItemName: [object Promise]
+selectedItemName: [object Promise]
