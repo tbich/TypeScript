@@ -9,18 +9,18 @@ test('Prompt Dialog', async({page}) =>{
 
     // Add a listener for the dialog event  
     page.on('dialog', async dialog => {
-    //check for a prompt dialog
-    expect(dialog.type()).toContain('prompt');
+        //check for a prompt dialog
+        expect(dialog.type()).toContain('prompt');
 
-    //check prompt message
-    expect(dialog.message()).toContain('Please enter your name:');
+        //check prompt message
+        expect(dialog.message()).toContain('Please enter your name:');
 
-    //check prompt default value
-    expect(dialog.defaultValue()).toContain('Harry Potter');   
+        //check prompt default value
+        expect(dialog.defaultValue()).toContain('Harry Potter');   
 
-    //set value to prompt textbox and accept
-    await dialog.accept(name);
-});
+        //set value to prompt textbox and accept
+        await dialog.accept(name);
+    });
 
     //click Prompt button to trigger dialog
     await page.click('//button[normalize-space()="Prompt"]');
