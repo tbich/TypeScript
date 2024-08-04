@@ -25,15 +25,18 @@ export default defineConfig({
   reporter: [['html'],['allure-playwright']],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   timeout: 45000,
+  globalSetup: require.resolve('./global-setup'),
   use: {
     /* Base URL to use in actions like `await page.goto('/')`. */
     baseURL: 'https://www.saucedemo.com/',
-
+    storageState: 'state.json',
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
     video: 'retain-on-failure',
     screenshot: 'only-on-failure', 
-  },
+
+  }
+  ,
 
   /* Configure projects for major browsers */
   projects: [

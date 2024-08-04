@@ -1,21 +1,12 @@
 import { test, expect } from '@playwright/test';
 
 test.beforeEach(async ({ page }) => {
-
     //Go to by baseURL
-    await page.goto('/');
-
-    //login to app
-    await page.locator(`//input[@id='user-name']`).fill('standard_user');
-    await page.locator(`//input[@id='password']`).fill('secret_sauce');
-    await page.locator(`//input[@id='login-button']`).click();
-
-    //Validate the "Products" is visible
-    await expect(page.locator(`//span[@data-test="title"]`)).toHaveText("Products");
+    await page.goto('/inventory.html');
 });
 
-test('Seesion4-TC1-Sort', async ({ page }) => {    
-
+test('Seesion4-TC1-Sort', async ({ page }) => {      
+ 
     //select sort by price (low to high)
     await page.locator(`//select[@data-test='product-sort-container']`).selectOption('lohi');
 
